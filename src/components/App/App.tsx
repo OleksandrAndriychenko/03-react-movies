@@ -43,7 +43,7 @@ export default function App() {
         return (
             <div className={css.app}>
                 <Toaster/>
-                <SearchBar onSubmit={handleSearch} disabled={isLoading}/>
+                <SearchBar onSubmit={handleSearch}/>
                 {isLoading && <Loader />}
                 {error && <ErrorMessage/>}
                 <MovieGrid movies={articles} onSelect={handleSelectMovie}/>

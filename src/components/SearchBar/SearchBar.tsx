@@ -1,12 +1,11 @@
 import styles from "./SearchBar.module.css";
 import toast, { Toaster } from 'react-hot-toast';
 
-interface SearchFormProps {
+interface SearchBarProps {
     onSubmit: (topic: string) => void;
-    disabled: boolean;
 }
 
-export default function SearchBar({ onSubmit, disabled }: SearchFormProps) {
+export default function SearchBar({ onSubmit}: SearchBarProps) {
     const handleSubmit = (formData: FormData) => {
         const query = formData.get("query") as string;
         if (!query) {
@@ -40,8 +39,7 @@ export default function SearchBar({ onSubmit, disabled }: SearchFormProps) {
                     />
                     <button
                         className={styles.button}
-                        type="submit"
-                        disabled={disabled}>
+                        type="submit">
                         Search
                     </button>
                 </form>
